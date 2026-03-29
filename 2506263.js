@@ -32,6 +32,9 @@ function startScanner() {
 
 
 
+
+
+
             toggleScanner();
         }
     ).catch(function (err) {
