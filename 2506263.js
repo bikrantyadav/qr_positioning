@@ -19,8 +19,8 @@ function startScanner() {
         { facingMode: "environment" },
         {},
         function (text) {
-            const place = JSON.parse(text);
-            showMarkerAt(place.top, place.left);
+            const item = JSON.parse(text);
+          
 
             document.getElementById("itemName").innerText = "Name: " + item.name;
 
@@ -30,10 +30,7 @@ function startScanner() {
             document.getElementById("itemPrice").innerText =
                 "Price: €" + item.price;
 
-            toggleScanner();
-
-
-
+        
 
             toggleScanner();
         }
