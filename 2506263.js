@@ -21,20 +21,6 @@ function startScanner() {
         function (text) {
             const place = JSON.parse(text);
             showMarkerAt(place.top, place.left);
-
-            document.getElementById("itemName").innerText = "Name: " + item.name;
-
-            document.getElementById("itemStatus").innerText =
-                "In store: " + (item.in_store ? "Yes" : "No");
-
-            document.getElementById("itemPrice").innerText =
-                "Price: €" + item.price;
-
-
-
-
-
-
             toggleScanner();
         }
     ).catch(function (err) {
