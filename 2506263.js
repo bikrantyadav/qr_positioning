@@ -19,7 +19,7 @@ function startScanner() {
         { facingMode: "environment" },
         {},
         function (text) {
-            const item = JSON.parse(text);
+            const place = JSON.parse(text);
 
             
             document.getElementById("placeName").innerText =
