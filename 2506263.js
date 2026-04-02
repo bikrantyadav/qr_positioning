@@ -17,12 +17,14 @@ function toggleScanner() {
 function startScanner() {
     reader.start(
         { facingMode: "environment" },
-        {},
+        { fps: 15, qrbox: 250 },
         function (text) {
-            const place = JSON.parse(text);
+            console.log("Scanned:", text);
 
-            
-            document.getElementById("placeName").innerText =
+            try {
+                const place = JSON.parse(text); // ✅ use place
+
+                document.getElementById("placeName").innerText =
                     "Name: " + place.name;
 
                 document.getElementById("placeLat").innerText =
@@ -30,6 +32,11 @@ function startScanner() {
 
                 document.getElementById("placeLng").innerText =
                     "Longitude: " + place.longitude;
+
+            } catch (e) {
+                alert("Invalid QR format!");
+                console.error(e);
+            }
 
             toggleScanner();
         }
