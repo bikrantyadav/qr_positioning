@@ -21,14 +21,15 @@ function startScanner() {
         function (text) {
             const item = JSON.parse(text);
 
-            // Show inventory info
-            document.getElementById("itemName").innerText = "Name: " + item.name;
+            
+            document.getElementById("placeName").innerText =
+                    "Name: " + place.name;
 
-            document.getElementById("itemStatus").innerText =
-                "In store: " + (item.in_store ? "Yes" : "No");
+                document.getElementById("placeLat").innerText =
+                    "Latitude: " + place.latitude;
 
-            document.getElementById("itemPrice").innerText =
-                "Price: €" + item.price;
+                document.getElementById("placeLng").innerText =
+                    "Longitude: " + place.longitude;
 
             toggleScanner();
         }
